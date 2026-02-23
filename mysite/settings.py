@@ -23,17 +23,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-a6^dsb-b-t)=u)0vz_s$&(hpdrm&e_o_g-sjz55dv@fghj*l#z"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 # Allowed hosts for Elastic Beanstalk + local dev
-ALLOWED_HOSTS = [".elasticbeanstalk.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 INSTALLED_APPS = [
     "polls.apps.PollsConfig",
-
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
