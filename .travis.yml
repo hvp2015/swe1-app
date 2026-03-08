@@ -1,5 +1,3 @@
-git checkout .travis.yml && \
-cat > .travis.yml << 'ENDOFFILE'
 language: python
 python:
   - "3.11"
@@ -26,5 +24,3 @@ deploy:
   bucket_name: "elasticbeanstalk-us-west-2-637423547536"
   on:
     branch: main
-ENDOFFILE
-git add .travis.yml && git commit -m "Enable EB deployment in Travis CI" && git push origin main
