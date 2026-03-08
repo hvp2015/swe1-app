@@ -27,7 +27,7 @@ DEBUG = True
 
 
 # Allowed hosts for Elastic Beanstalk + local dev
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["swe1-app-env.eba-ctyqusyb.us-west-2.elasticbeanstalk.com", "*"]
 
 
 # Application definition
