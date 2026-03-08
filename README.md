@@ -1,10 +1,10 @@
-# My SWE assign.2
+# Your Django Project Name
 
 [![Build Status](https://app.travis-ci.com/hvp2015/swe1-app.svg?branch=main)](https://app.travis-ci.com/hvp2015/swe1-app)
 [![Coverage Status](https://coveralls.io/repos/github/hvp2015/swe1-app/badge.svg?branch=main)](https://coveralls.io/github/hvp2015/swe1-app?branch=main)
 
 ## About
-A Django web application for SWE assign.2.
+A Django web application.
 
 ## Setup
 
