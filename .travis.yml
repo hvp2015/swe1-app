@@ -1,34 +1,30 @@
+git checkout .travis.yml && \
+cat > .travis.yml << 'ENDOFFILE'
 language: python
-
 python:
   - "3.11"
-
 cache: pip
-
 install:
   - pip install -r requirements.txt
   - pip install black flake8 coverage coveralls
-
 before_script:
   - python manage.py migrate
   - python manage.py collectstatic --noinput
-
 script:
   - black --check .
   - flake8 .
   - coverage run --source=mysite,polls manage.py test
-
 after_success:
   - coveralls
-
-# Uncomment and fill in when your EB environment is ready:
-# deploy:
-#   provider: elasticbeanstalk
-#   access_key_id: $AWS_ACCESS_KEY_ID
-#   secret_access_key: $AWS_SECRET_ACCESS_KEY
-#   region: "us-west-2"
-#   app: "swe1-app"
-#   env: "YOUR_EB_ENV_NAME"
-#   bucket_name: "YOUR_S3_BUCKET_NAME"
-#   on:
-#     branch: main
+deploy:
+  provider: elasticbeanstalk
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
+  region: "us-west-2"
+  app: "swe1-app"
+  env: "Swe1-app-env"
+  bucket_name: "elasticbeanstalk-us-west-2-637423547536"
+  on:
+    branch: main
+ENDOFFILE
+git add .travis.yml && git commit -m "Enable EB deployment in Travis CI" && git push origin main
